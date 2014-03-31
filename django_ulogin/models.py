@@ -90,6 +90,6 @@ def create_user(request, ulogin_response):
 
     # Default behavior
     User = get_user_model()
-    return User.objects.create_user(username=uuid.uuid4().hex,
+    return User.objects.create_user(username=uuid.uuid4().hex[:29],
                                     password=get_random_string(10, '0123456789abcdefghijklmnopqrstuvwxyz'),
                                     email='')
